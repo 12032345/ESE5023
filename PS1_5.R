@@ -1,6 +1,6 @@
-nums <- c(1,2,3,4,5,6,7,8,9)     #Ë¼Â·²Î¿¼https://bbs.csdn.net/topics/390592099
+nums <- c(1,2,3,4,5,6,7,8,9)     #æ€è·¯å‚è€ƒhttps://bbs.csdn.net/topics/390592099
 sum <- 0
-Find_expression <- function(x){  #±éÀúËùÓĞ¿ÉÄÜ£¬ÕÒ³ö·ûºÏÌõ¼şµÄ±í´ïÊ½
+Find_expression <- function(x){  #éå†æ‰€æœ‰å¯èƒ½ï¼Œæ‰¾å‡ºç¬¦åˆæ¡ä»¶çš„è¡¨è¾¾å¼
   for(o in 1:3^8){
     buffer <- "1"
     result <- 0
@@ -34,7 +34,7 @@ Find_expression <- function(x){  #±éÀúËùÓĞ¿ÉÄÜ£¬ÕÒ³ö·ûºÏÌõ¼şµÄ±í´ïÊ½
     }
   }
 }
-Total_solutions <- function(x){  #¼ÆËã·ûºÏÌõ¼şµÄ±í´ïÊ½µÄ¸öÊı
+Total_solutions <- function(x){  #è®¡ç®—ç¬¦åˆæ¡ä»¶çš„è¡¨è¾¾å¼çš„ä¸ªæ•°
   for(o in 1:3^8){
     buffer <- "1"
     result <- 0
@@ -70,4 +70,13 @@ Total_solutions <- function(x){  #¼ÆËã·ûºÏÌõ¼şµÄ±í´ïÊ½µÄ¸öÊı
   print(sum)
 }
 Find_expression(50)
-Total_solutions(50)      #Ê¹ÓÃ±©Á¦½â·¨£¬Ã»ÓĞÓÃµ½ÅÅÁĞ×éºÏ
+Total_solutions(50)      
+
+v <- vector(length = 100)
+for(i in 1:100){
+  v[i] <- Total_solutions(i)
+}
+
+plot(1:100,v)
+which(v==min(v))
+which(v==max(v))
