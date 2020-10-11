@@ -1,13 +1,15 @@
-data <- read.csv('2005Î÷Ë«°æÄÉ½µÓêÁ¿.csv')
+data <- read.csv('2005è¥¿åŒç‰ˆçº³é™é›¨é‡.csv')
 
 data2  <- data %>%
-  group_by(ÔÂ)%>%
-  summarize(month_max = max(×Ü½µË®Á¿.mm.))
+  group_by(æœˆ)%>%
+  summarize(month_max = max(æ€»é™æ°´é‡.mm.))
 
-time <- data2$ÔÂ
+time <- data2$æœˆ
 max_jsl <- data2$month_max
 plot(time,max_jsl, type="l", col="blue")
 
+æ€»é™æ°´é‡.mm.[which(æ€»é™æ°´é‡ = -9999)] <- NA
+
 data %>%
-  group_by(ÔÂ)%>%
-  summarize(month_max = max(×Ü½µË®Á¿.mm.),month_min = min(×Ü½µË®Á¿.mm.),month_mean = mean(×Ü½µË®Á¿.mm.),month_median = median(×Ü½µË®Á¿.mm.),month_var = var(×Ü½µË®Á¿.mm.))
+  group_by(æœˆ)%>%
+  summarize(month_max = max(æ€»é™æ°´é‡.mm.),month_min = min(æ€»é™æ°´é‡.mm.),month_mean = mean(æ€»é™æ°´é‡.mm.,na.rm=T),month_median = median(æ€»é™æ°´é‡.mm.),month_var = var(æ€»é™æ°´é‡.mm.))
