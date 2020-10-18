@@ -3,7 +3,7 @@ Least_moves <- function(x){
   v[1] <- 0
   for(i in 2:x){
     v[i] <- v[i-1]+1
-    if(i %% 2 == 0)  #×¢ÒâRÓïÑÔÖÐÈ¡ÓàÊýÔËËã·û:%%
+    if(i %% 2 == 0)  #æ³¨æ„Rè¯­è¨€ä¸­å–ä½™æ•°è¿ç®—ç¬¦:%%
     {
       v[i] <- min(v[i],v[i/2] + 1)
     }
@@ -11,5 +11,5 @@ Least_moves <- function(x){
   print(v[x])
 }
 Least_moves(5)
-
-#Ê¹ÓÃµ¹ÍÆ·¨½â¾ö£¬Ã»ÓÐÓÃµ½combinations()¡¢permutations()
+# Least_moves(1) should be 0
+#ä½¿ç”¨å€’æŽ¨æ³•è§£å†³ï¼Œæ²¡æœ‰ç”¨åˆ°combinations()ã€permutations()
