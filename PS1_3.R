@@ -5,4 +5,8 @@ Pascal_triangle <- function(x){  #打印第x行
   print(Pascal(x)[x])
 }
 Pascal_triangle(100)
-
+  # it is really good for a researcher to use various useful tools to improve your work efficiency
+  # but as a student, it is essential to know the basic principle，and write it by yourself
+  # moreover, this is an introductory course for programing, the most important part is to:
+  #   1   learn thinking a realistic problem with programing perspection
+  #   2   coding by yourself to solve this problem
