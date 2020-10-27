@@ -2,12 +2,13 @@ library(tidyr)
 library(dplyr)
 library(ggplot2)
 
-My_data <- read.csv("C:/Users/lenovo/Documents/2005Î÷Ë«°æÄÉ½µÓêÁ¿.csv")
+My_data <- read.csv("C:/Users/lenovo/Documents/2005è¥¿åŒç‰ˆçº³é™é›¨é‡.csv")
 My_data_t <- as_tibble(My_data)
 My_data_t %>%
-  group_by(ÔÂ)%>%
-  summarize(month_max = max(×Ü½µË®Á¿.mm.))%>%
-  ggplot(aes(x=ÔÂ,y=month_max))+
+  group_by(æœˆ)%>%
+  summarize(month_max = max(æ€»é™æ°´é‡.mm.))%>%
+  ggplot(aes(x=æœˆ,y=month_max))+
   geom_line()+
   scale_x_continuous(breaks = c(2,4,6,8,10,12))
   
+# good work
