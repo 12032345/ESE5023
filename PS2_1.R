@@ -15,9 +15,11 @@ Sig_Eqs %>%
 Sig_Eps_table <- Sig_Eqs %>%
   select(YEAR,EQ_PRIMARY) %>%
   filter(EQ_PRIMARY > 6.0)
-totol_earthquakes <- table(Sig_Eps_table$YEAR) #table()µÄÊä³ö¿ÉÒÔ¿´³ÉÊÇÒ»¸ö´øÃû×ÖµÄÊý×ÖÏòÁ¿¡£¿ÉÒÔÓÃnames()ºÍas.numeric()·Ö±ðµÃµ½Ãû³ÆºÍÆµÊý
+totol_earthquakes <- table(Sig_Eps_table$YEAR) #table()çš„è¾“å‡ºå¯ä»¥çœ‹æˆæ˜¯ä¸€ä¸ªå¸¦åå­—çš„æ•°å­—å‘é‡ã€‚å¯ä»¥ç”¨names()å’Œas.numeric()åˆ†åˆ«å¾—åˆ°åç§°å’Œé¢‘æ•°
 plot(totol_earthquakes)
-
+# @MingYANG  
+# your answer is right, but make a plot like this is not recommended. Abscissa cannot be identified because of the dense numbers
+# try this: plot(names(totol_earthquakes), as.numeric(totol_earthquakes)ï¼Œtype="l")
 
 #1.4
 #1.4.1 function
@@ -26,6 +28,9 @@ CountEq_LargestEq <- function(x){
   CountEq2 <- as_tibble(as.data.frame(CountEq))
   CountEq3 <- CountEq2 %>%
     filter(Var1 == x) 
+  ## MingYANG
+  ## this is quite vaque for understanding your purpose
+  ## you didn`t use the data above, and you`d better delete it
   a <- Sig_Eqs %>%
     unite(date,YEAR,MONTH,DAY,sep = "-",remove = FALSE) %>%
     select(date,EQ_PRIMARY,COUNTRY) %>%
@@ -36,6 +41,23 @@ CountEq_LargestEq <- function(x){
   out <- list(CountEq3$Freq,a$date)
   return(out)
 }
+# MingYANG
+# your answer is not right
+# TRY THIS BELOW:
+# 1.4 workable code for reference 
+CountEq_LargestEq<-function(country){
+  Number_Eq<-Sig_Eqs%>% 
+    filter(COUNTRY==country)%>% 
+    nrow()
+  Max_Eq<-Sig_Eqs%>%
+    filter(COUNTRY==country)%>% 
+    filter(EQ_PRIMARY==max(EQ_PRIMARY,na.rm=T))%>% 
+    mutate(date=paste(YEAR,MONTH,DAY,sep="-"))%>% 
+    pull(date)
+  list<-list(Number_Eq,Max_Eq)
+  return(list)
+}
+
 #CountEq_LargestEq("ANTARCTICA")  test for the function
 #1.4.2 apply the function to each country
 b <- Sig_Eqs %>%
