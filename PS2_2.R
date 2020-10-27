@@ -12,6 +12,10 @@ My_data_t %>%
   unite("year_month",c("year","month"),sep="-",remove=FALSE) %>%
   group_by(year_month) %>%
   summarise(meanspeed = mean(as.numeric(substr(WND,1,3)))) %>%
+  # MingYANG 
+  # the wind speed is substr(WND,9,12), instead of  substr(WND,1,3)
   separate(year_month,c("year","month"),remove=FALSE) %>%
   ggplot(aes(x=year_month,y=meanspeed,group=1,color=month)) + #group=1:https://cloud.tencent.com/developer/ask/88025
   geom_line() 
+
+# well done for denote difference months with different color! 
