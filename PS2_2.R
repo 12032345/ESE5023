@@ -14,6 +14,7 @@ My_data_t %>%
   summarise(meanspeed = mean(as.numeric(substr(WND,1,3)))) %>%
   # MingYANG 
   # the wind speed is substr(WND,9,12), instead of  substr(WND,1,3)
+  # the wind speed has the scaling factor of 10, so the true wind speed should multiply 0.1
   separate(year_month,c("year","month"),remove=FALSE) %>%
   ggplot(aes(x=year_month,y=meanspeed,group=1,color=month)) + #group=1:https://cloud.tencent.com/developer/ask/88025
   geom_line() 
