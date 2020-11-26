@@ -15,3 +15,5 @@ plot(weight ~ height, data = Mydata3)
 fit2 <- lm(weight ~ height, data = Mydata3)
 summary(fit2)
 abline(fit2)
+
+# good work
