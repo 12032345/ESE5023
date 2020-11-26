@@ -6,3 +6,5 @@ fit <- lm(y~x)
 summary(fit)
 abline(fit, lwd = 3, col = "#ee3f4d")
 summary(fit)$coefficients
+
+# good work
