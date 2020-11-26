@@ -17,3 +17,5 @@ summary(bestmodel)
 perf_p <- predict(bestmodel,cpus_test)
 #caculate the mean bias
 mean(perf_p) - mean(cpus_test$perf)
+
+# good work
