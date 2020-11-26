@@ -10,3 +10,5 @@ boxplot(Rainfall~Days, data=Mydata,
 #do a one-way anova to prove if seeding have an effect on rainfall 
 anova <- aov(Rainfall ~ Days,data = Mydata)
 summary(anova)
+
+# good work
