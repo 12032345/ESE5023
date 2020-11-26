@@ -6,3 +6,4 @@ Mydata <- read.csv("Tyrannosaurus rex skeleton.csv",header = T)
 
 anova <- aov(Oxygen ~ Bone, data = Mydata)
 summary(anova)
+# good work
