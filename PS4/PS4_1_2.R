@@ -22,3 +22,7 @@ p <- ggplot(data) +
   ylim(0,1.5)
 
 p
+
+# MinYANG noticed:
+# use legend for explaining the meaning of different color
+# the end
