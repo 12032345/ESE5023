@@ -16,3 +16,4 @@ data %>%
   ylab("Life Expectancy") +
   xlab("Gdp per Capita") +
   theme(legend.position = "none")
+# good work
