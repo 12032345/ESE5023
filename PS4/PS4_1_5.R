@@ -17,3 +17,4 @@ m <- leaflet(quakes) %>%
   addLegend( pal=mypalette, values=~mag, opacity=0.9, title = "Magnitude", position = "bottomright" )
 
 m
+# good work
