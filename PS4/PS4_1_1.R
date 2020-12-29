@@ -11,3 +11,6 @@ p <- ggplot(data_m, aes(x=variable, y=value),color=variable) +
   theme(legend.position="none")
 
 p
+# MingYANG noticed:
+# good but you need to set a legend for explaining what y axis means
+# the end
