@@ -42,3 +42,5 @@ plot(prec_crop_china,  main="prec speed in china in November")
 contour(prec_crop_china, add=T,levels=seq(from=0,to=40,by=10), col="#F08080")
 plot(srad_crop_china,  main="solar radiation in china in November")
 contour(srad_crop_china, add=T,levels=seq(from=14000,to=18000,by=500), col="#00BFFF")
+
+# good work
