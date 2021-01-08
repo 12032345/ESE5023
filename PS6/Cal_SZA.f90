@@ -24,3 +24,5 @@ SZA = ACOS(cos(Lat*pi/180)*cos(A*pi/180)*cos(H*pi/180)+sin(Lat*pi/180)*sin(A*pi/
 write(*,*),"SZA is ",SZA
 
 end program Cal_SZA
+
+! excellent work!
