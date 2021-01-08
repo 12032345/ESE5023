@@ -20,3 +20,5 @@ contains
    end subroutine solar_time  
    
 end module AST
+
+! excellent work!
