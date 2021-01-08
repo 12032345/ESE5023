@@ -15,3 +15,5 @@ implicit none
    end subroutine Dec_angle 
    
 end module Declination_angle
+
+! excellent work!
